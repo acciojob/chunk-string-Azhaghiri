@@ -1,17 +1,23 @@
 function stringChop(str, size) {
   // your code here
-	let chunks = [];
+	size = parseInt(size);
 
-    // Loop through the string and slice it into chunks
-    for (let i = 0; i < str.length; i += length) {
-        // Slice the string from the current index 'i' up to 'i + length'
-        chunks.push(str.slice(i, i + length));
-    }
+  // Initialize an empty array to store the chunks
+  let chunks = [];
 
-    // Return the array of chunks
+  // If the size is invalid (e.g., less than 1), return an empty array
+  if (size < 1) {
     return chunks;
+  }
 
-	
+  // Loop through the string and slice it into chunks
+  for (let i = 0; i < str.length; i += size) {
+    chunks.push(str.slice(i, i + size));
+  }
+
+  // Return the array of chunks
+  return chunks;
+
 }
 
 // Do not change the code below
